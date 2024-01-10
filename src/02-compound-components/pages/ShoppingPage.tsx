@@ -1,4 +1,4 @@
-import ProductCard, { ProductTitle, ProductImage, ProductButtons } from '../components';
+import { ProductCard, ProductImage, ProductTitle, ProductButtons } from '../components';
 
 const product = {
   id: '1',
@@ -28,12 +28,6 @@ const ShoppingPage: React.FC = () => {
           <ProductTitle title='Café con leche' />
           <ProductButtons />
         </ProductCard>
-
-        {/* <ProductCard product={product}>
-          <ProductImage image={product.img} />
-          <ProductTitle title={product.title} />
-          <ProductButtons increaseBy={increaseBy} count={count} />
-        </ProductCard> */}
       </div>
     </div>
   );
