@@ -14,9 +14,18 @@ interface Route {
 /* LazyLoad */
 const lazy1 = lazy(() => import("../01-lazyload/pages/LazyPage1"));
 const lazy2 = lazy(() => import("../01-lazyload/pages/LazyPage2"));
-const lazy3 = lazy(() => import("../01-lazyload/pages/LazyPage3"));
+
+const shoppingPage = lazy(
+  () => import("../02-compound-components/pages/ShoppingPage")
+);
 
 export const routes: Route[] = [
+  {
+    to: "/",
+    path: "",
+    Component: shoppingPage,
+    name: "Shopping page",
+  },
   {
     to: "/lazy1",
     path: "lazy1",
@@ -28,11 +37,5 @@ export const routes: Route[] = [
     path: "lazy2",
     Component: lazy2,
     name: "lazy-2",
-  },
-  {
-    to: "/lazy3",
-    path: "lazy3",
-    Component: lazy3,
-    name: "lazy-3",
   },
 ];

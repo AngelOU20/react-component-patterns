@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { routes } from './routes';
-import logo from '../assets/react.svg';
+import logo from '/react.svg';
 
 export const Navigation = () => {
   return (
