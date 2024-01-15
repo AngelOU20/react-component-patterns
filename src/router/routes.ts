@@ -12,19 +12,20 @@ interface Route {
 }
 
 /* LazyLoad */
-const lazy1 = lazy(() => import("../01-lazyload/pages/LazyPage1"));
+const lazyLoad = lazy(() => import("../01-lazyload/pages/LazyPage1"));
 const compoundComponent = lazy(
   () => import("../02-compound-components/pages/ShoppingPage")
 );
 const extensibleStyles = lazy(
   () => import("../03-extensible-styles/pages/ShoppingPage")
 );
+const controlProps = lazy(() => import("../04-control-props/pages/ShoppingPage"));
 
 export const routes: Route[] = [
   {
-    to: "/lazy1",
-    path: "lazy1",
-    Component: lazy1,
+    to: "/lazy",
+    path: "lazy",
+    Component: lazyLoad,
     name: "Lazy load",
   },
   {
@@ -38,5 +39,11 @@ export const routes: Route[] = [
     path: "extensible-styles",
     Component: extensibleStyles,
     name: "Extensible styles",
+  },
+  {
+    to: "/control-Props",
+    path: "control-Props",
+    Component: controlProps,
+    name: "Control props",
   },
 ];
