@@ -1,4 +1,4 @@
-import { products } from '../data/products';
+import { products } from '../../data/products';
 import { useShoppingCart } from '../hooks/useShoppingCart';
 import { ProductCard, ProductImage, ProductTitle, ProductButtons } from '../components';
 import '../styles/custom-styles.css';
