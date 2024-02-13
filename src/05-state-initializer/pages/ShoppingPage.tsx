@@ -18,14 +18,46 @@ const ShoppingPage: React.FC = () => {
           maxCount: 10,
         }}
       >
-        <ProductImage
-          className="custom-image"
-          style={{
-            boxShadow: '10px 10px 10px rgba(0,0,0,0.2)',
-          }}
-        />
-        <ProductTitle className="text-bold" />
-        <ProductButtons className="custom-buttons" />
+        {({ reset, increaseBy, isMaxCountReached, count, maxCount }) => (
+          <>
+            <ProductImage
+              className="custom-image"
+              style={{
+                boxShadow: '10px 10px 10px rgba(0,0,0,0.2)',
+              }}
+            />
+            <ProductTitle className="text-bold" />
+            <ProductButtons className="custom-buttons" />
+
+            <span
+              style={{
+                fontSize: 20,
+                display: 'flex',
+                justifyContent: 'center',
+                margin: '10px',
+                border: '1px solid #fff',
+                borderRadius: 5,
+              }}
+            >
+              {count} - {maxCount}
+            </span>
+
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'start',
+                gap: 10,
+                marginLeft: 10,
+              }}
+            >
+              <button onClick={reset}>Reset</button>
+              <button onClick={() => increaseBy(-2)}>-2</button>
+              {!isMaxCountReached ? (
+                <button onClick={() => increaseBy(2)}>+2</button>
+              ) : null}
+            </div>
+          </>
+        )}
       </ProductCard>
     </div>
   );
